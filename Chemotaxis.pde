@@ -38,17 +38,16 @@
  }  
 int a = 250;
 int b = 250;
-
-
+void blackhole()
+{
+	fill(255,255,255,75);
+	ellipse(a, b,50,50);
+}
 void mousePressed()
 {
 	toMove = true;
+	blackhole();
 
-}
-void blackhole()
-{
-	fill(255);
-	ellipse(a, b,50,50);
 }
 
 
@@ -58,6 +57,7 @@ void blackhole()
 
  	Bacteria (int x, int y)
  	{
+
  		myX = (int)(Math.random()*501);
  		myY = (int)(Math.random()*501);
  	}   
@@ -65,7 +65,7 @@ void blackhole()
 
  	void show()
  	{
- 		fill(255);
+ 		fill((int)(Math.random()*256));
  		ellipse(myX,myY,10,10);
  		
  		
