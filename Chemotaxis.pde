@@ -5,7 +5,7 @@
  void setup()   
  {     
  	size(500,500);
- 	frameRate(5);   
+ 	frameRate(10);   
 
  	bob = new Bacteria[200];
  	for(int i = 0; i<bob.length; i++)
@@ -36,6 +36,8 @@
  	blackhole();
 
  }  
+
+
 int a = 250;
 int b = 250;
 void blackhole()
@@ -43,13 +45,22 @@ void blackhole()
 	fill(255,255,255,75);
 	ellipse(a, b,50,50);
 }
+
+
 void mousePressed()
 {
-	toMove = true;
-	blackhole();
+	if(mouseButton ==LEFT ){
+		toMove = true;
+		blackhole();
+	}
 
+	
+
+	if(mouseButton == RIGHT){
+		toMove = false;
+		setup();
+	}
 }
-
 
  class Bacteria    
  {     
